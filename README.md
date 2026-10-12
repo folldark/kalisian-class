@@ -4,7 +4,7 @@
 
 目前單元：
 
-- **2026-10-12「策展」，共 25 張投影片**。說明期末成果以「人物誌」形式策展：為什麼要策展（對自己、對社區）、「沒特色→找不到特色」的迴圈、關鍵是說故事（京都血天井、新選組、陳思宏《鬼地方》、吳念真幫礦區鄉親讀信），最後是方向與今日作業（作業連結由老師自行放入第 25 張）。
+- **2026-10-12「策展」，共 26 張投影片**。說明期末成果以「人物誌」形式策展：為什麼要策展（對自己、對社區）、「沒特色→找不到特色」的迴圈、關鍵是說故事（京都血天井、新選組、陳思宏《鬼地方》、吳念真幫礦區鄉親讀信，第 19 張嵌入吳念真口述影片），最後是方向與今日作業（作業連結由老師自行放入第 26 張）。
 - 2026-09-21「和美的痕跡」，共 26 張投影片。番外篇（當天主活動是「走跳卡里善」尋寶遊戲，投影片是補充教材）：許常惠家族在和美的線索、和美街長宿舍的命名爭議（1896 年原為警察官吏派出所，「街長宿舍」疑似戰後追認的稱呼）、附近街區的都市計畫年代對照，最後留給學生一份資料檢索任務清單。
 - 2026-09-14「該去買車票了嗎？」，共 24 張投影片。從第一週「要不要留彰化」接下去：彰化二戰以來人口淨移出、清代劉銘傳在台中規劃省城、1895 年民政支部四個月內從彰化遷往台中、路徑依賴，最後回到「和美需要什麼」。
 
@@ -63,7 +63,7 @@ python3 -m http.server 8000
 1. 在 `lessons/` 建立 `YYYY-MM-DD-單元名稱/`，把新原稿存成 `講義原稿.md`，圖片放進該資料夾的 `assets/`。
 2. 複製既有單元的 `index.html` 作為骨架，更改 `<title>`、description、`data-title`、日期與封面資訊，替換 `<main class="deck">` 內的投影片內容。維持 `lang="zh-Hant-TW"`。
 3. 每張投影片保留 `class="slide"`、`id="slide-N"`、`data-section`、`data-theme` 與 `aria-labelledby`；主題色可用 `brick`（深磚紅）、`charcoal`（炭黑）、`sand`（砂色）、`paper`（米白）。頁數與進度由 `app.js` 自動計算，只需更新控制列的 `#counter` 初始值。
-4. 依內容選用 `title-slide`、`section-slide`（長標題加 `long-title`）、`statement-slide`、`question-slide`、`reason-slide`。史料引文用 `<blockquote class="historical-quote">`，年表用 `<ol class="timeline">`，距離對照用 `<ol class="distance-list">`；因果鏈用 `<ol class="chain">`（最後一項加 `class="loop-back"` 表示繞回起點），以圖為主的頁面用 `photo-slide`（左 `<figure>` 右 `.photo-copy`，要點用 `<ul class="fact-list">`，圖說必附出處與授權）。這兩種是 2026-10-12 加的。講者提示放在 `<aside class="speaker-notes">`，不擴寫原稿正文；沒有實質提示就不要放。
+4. 依內容選用 `title-slide`、`section-slide`（長標題加 `long-title`）、`statement-slide`、`question-slide`、`reason-slide`。史料引文用 `<blockquote class="historical-quote">`，年表用 `<ol class="timeline">`，距離對照用 `<ol class="distance-list">`；因果鏈用 `<ol class="chain">`（最後一項加 `class="loop-back"` 表示繞回起點），以圖為主的頁面用 `photo-slide`（左 `<figure>` 右 `.photo-copy`，要點用 `<ul class="fact-list">`，圖說必附出處與授權）。嵌入 YouTube 用 `video-slide`＋`.video-frame`，iframe 寫 `data-src`（不寫 `src`），並把 2026-10-12 單元頁末那段小 script 一起複製：進到該頁才載入、離開時自動停止。這三種是 2026-10-12 加的。講者提示放在 `<aside class="speaker-notes">`，不擴寫原稿正文；沒有實質提示就不要放。
 5. 共用檔案繼續引用 `../../styles.css`、`../../app.js`、`../../favicon.svg`；單元圖片用 `assets/圖片.png`。
 6. 在根目錄 `index.html` 的 `.lesson-list` 複製一個 `<li>`，更新入口相對路徑、日期、名稱與一句話說明；README 的「目前單元」也補一行。
 7. 本地預覽，檢查正文、投影畫面、手機、換頁與連結。
