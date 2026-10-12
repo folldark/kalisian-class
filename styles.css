@@ -260,6 +260,8 @@ noscript { display: block; padding: 1rem; background: var(--paper); }
 .fact-list { display: grid; gap: .5em; padding-left: 1.1em; max-width: 34rem; }
 .fact-list li { font-size: clamp(1.05rem, 1.8vw, 1.8rem); line-height: 1.5; }
 .fact-list li::marker { color: var(--accent); }
+.slide > .fact-list { max-width: 60rem; gap: .7em; }
+.slide > .fact-list li { font-size: clamp(1.2rem, 2.3vw, 2.3rem); }
 @media (max-width: 760px) {
   .chain { display: grid; gap: .2em; }
   .chain li { font-size: clamp(1.15rem, 4.6vw, 1.7rem); }
