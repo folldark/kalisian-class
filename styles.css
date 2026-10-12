@@ -281,3 +281,7 @@ noscript { display: block; padding: 1rem; background: var(--paper); }
 .video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
 .video-slide .source-note a { color: inherit; }
 @media print { .video-frame { display: none; } }
+/* 參考資源頁的外部連結：沿用文字色、加底線；來源名稱小字接在後面。 */
+.source-list a { color: inherit; text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+.source-list a:hover, .source-list a:focus-visible { color: var(--accent); }
+.source-meta { margin-left: .6em; font-size: .75em; opacity: .7; }
