@@ -245,3 +245,32 @@ noscript { display: block; padding: 1rem; background: var(--paper); }
   .historical-quote p, .reason-slide .reason-copy { font-size: 20pt; }
   .timeline li, .distance-list li { font-size: 24pt; }
 }
+/* 2026-10-12 策展單元新增：因果鏈（含繞回起點的循環）與圖片為主的版面。 */
+.chain { display: flex; flex-wrap: wrap; align-items: center; gap: .6em 0; padding: 0; list-style: none; max-width: 72rem; }
+.chain li { display: flex; align-items: center; font-size: clamp(1.3rem, 2.6vw, 2.6rem); font-weight: 800; line-height: 1.35; }
+.chain li + li::before { content: "→"; margin-inline: .5em; color: var(--accent); font-weight: 500; }
+.chain li.loop-back { flex-basis: 100%; margin-top: .4em; font-size: clamp(1.05rem, 1.9vw, 1.9rem); font-weight: 600; color: var(--accent); }
+.chain li.loop-back::before { content: "↺"; margin-inline: 0 .4em; }
+.photo-slide { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: center; column-gap: clamp(1.5rem, 4vw, 4.5rem); }
+.photo-slide figure { margin: 0; display: grid; gap: .6rem; }
+.photo-slide img { width: 100%; max-height: 66vh; object-fit: cover; border-radius: .3rem; box-shadow: var(--shadow); }
+.photo-slide figcaption { font-size: clamp(.75rem, 1vw, 1rem); line-height: 1.5; opacity: .7; }
+.photo-copy { display: grid; gap: 1.4rem; align-content: center; }
+.photo-copy h2 { font-size: clamp(2rem, 4.2vw, 4.6rem); }
+.fact-list { display: grid; gap: .5em; padding-left: 1.1em; max-width: 34rem; }
+.fact-list li { font-size: clamp(1.05rem, 1.8vw, 1.8rem); line-height: 1.5; }
+.fact-list li::marker { color: var(--accent); }
+@media (max-width: 760px) {
+  .chain { display: grid; gap: .2em; }
+  .chain li { font-size: clamp(1.15rem, 4.6vw, 1.7rem); }
+  .chain li + li::before { content: "↓"; margin-inline: 0 .5em; }
+  .chain li.loop-back::before { content: "↺"; }
+  .photo-slide { grid-template-columns: 1fr; row-gap: 1.2rem; }
+  .photo-slide img { max-height: 32vh; }
+  .photo-copy h2 { font-size: clamp(1.8rem, 6.8vw, 2.8rem); }
+  .fact-list li { font-size: clamp(1rem, 4vw, 1.35rem); }
+}
+@media print {
+  .chain li { font-size: 22pt; }
+  .fact-list li { font-size: 16pt; }
+}
